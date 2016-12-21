@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.nuxeo.ecm.distribution</groupId>
-    <artifactId>nuxeo-distribution</artifactId>
-    <version>8.3</version>
+    <groupId>org.nuxeo</groupId>
+    <artifactId>nuxeo-addons-parent</artifactId>
+    <version>8.10</version>
   </parent>
   <groupId>org.nuxeo.aws.elastictranscoder</groupId>
   <artifactId>nuxeo-aws-elastictranscoder-parent</artifactId>
-  <version>8.3-SNAPSHOT</version>
+  <version>8.10-SNAPSHOT</version>
   <name>Parent Project for Nuxeo-AWS Elastic Transcoder</name>
   <packaging>pom</packaging>
   <description />
@@ -16,7 +16,8 @@
     <module>nuxeo-aws-elastictranscoder-mp</module>
   </modules>
   <properties>
-    <nuxeo.aws.elastictranscoder.version>8.3-SNAPSHOT</nuxeo.aws.elastictranscoder.version>
+    <nuxeo.distribution.version>8.10</nuxeo.distribution.version>
+    <nuxeo.aws.elastictranscoder.version>8.10-SNAPSHOT</nuxeo.aws.elastictranscoder.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -61,22 +62,32 @@
         <enabled>true</enabled>
       </releases>
       <snapshots>
-        <updatePolicy>always</updatePolicy>
         <enabled>true</enabled>
       </snapshots>
     </repository>
   </repositories>
-
   <pluginRepositories>
     <pluginRepository>
       <id>public</id>
       <url>http://maven.nuxeo.org/nexus/content/groups/public</url>
-      <name>Nuxeo releases</name>
+      <name>Nuxeo virtual release repository</name>
       <releases>
         <enabled>true</enabled>
       </releases>
       <snapshots>
         <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+      <id>public-snapshot</id>
+      <url>http://maven.nuxeo.org/nexus/content/groups/public-snapshot</url>
+      <name>Nuxeo virtual snapshot repository</name>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+        <enabled>true</enabled>
       </snapshots>
     </pluginRepository>
   </pluginRepositories>

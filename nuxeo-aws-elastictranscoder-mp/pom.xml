@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.nuxeo.aws.elastictranscoder</groupId>
     <artifactId>nuxeo-aws-elastictranscoder-parent</artifactId>
-    <version>8.3-SNAPSHOT</version>
+    <version>8.10-SNAPSHOT</version>
   </parent>
   <artifactId>nuxeo-aws-elastictranscoder-mp</artifactId>
   <packaging>zip</packaging>
@@ -15,15 +15,19 @@
     <!-- Base distribution(s) for the MP -->
     <dependency>
       <groupId>org.nuxeo.ecm.distribution</groupId>
-      <artifactId>nuxeo-distribution-cap</artifactId>
+      <artifactId>nuxeo-nxr-server</artifactId>
+      <version>${nuxeo.distribution.version}</version>
       <type>pom</type>
     </dependency>
     <dependency>
       <groupId>org.nuxeo.ecm.distribution</groupId>
-      <artifactId>nuxeo-distribution-cap</artifactId>
+      <artifactId>nuxeo-nxr-server</artifactId>
+      <version>${nuxeo.distribution.version}</version>
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
+    
+    <!-- Additional bundles to be deployed by the MP -->
     <dependency>
       <groupId>org.nuxeo.aws.elastictranscoder</groupId>
       <artifactId>nuxeo-aws-elastictranscoder-plugin</artifactId>
@@ -36,9 +40,7 @@
         <groupId>org.nuxeo.build</groupId>
         <artifactId>ant-assembly-maven-plugin</artifactId>
         <configuration>
-          <buildFiles>
-            <buildFile>${basedir}/src/main/assemble/assembly.xml</buildFile>
-          </buildFiles>
+          <buildFile>${basedir}/src/main/assemble/assembly.xml</buildFile>
         </configuration>
       </plugin>
     </plugins>
