@@ -1,7 +1,7 @@
 <package type="addon" name="nuxeo-aws-elastictranscoder" version="@VERSION@">
-  <title>Nuxeo Tagging Operations</title>
+  <title>Nuxeo AWS Elastic Transcoder</title>
   <description>
-    <p>This addon activates the Nuxeo AWS ElasticTranscoder plug-in.</p>
+    <p>This addon activates the Nuxeo AWS Elastic Transcoder plug-in.</p>
   </description>
   <home-page></home-page>
   <vendor>Nuxeo</vendor>
